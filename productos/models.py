@@ -38,5 +38,3 @@ class Precio(models.Model):
         return self.producto.nombre
     
 
-class Venta(models.Model):
-    pass

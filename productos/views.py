@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 # Create your views here.
 
@@ -56,3 +56,19 @@ def crearcompra(request):
         return render(request, 'c_producto.html', {
             'form': form,
         })
+    
+def listar_producto(request):
+    productos = Producto.objects.all()
+    return render(request, 'listar_productos.html', {
+        'productos': productos
+    })
+
+def eliminar_producto(request, producto_id):
+    producto = get_object_or_404(Producto, pk=producto_id)
+    producto.delete()
+    return redirect('listarproducto')
+
+
+def modificar_producto(request, producto_id):
+    pass
+        

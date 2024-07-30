@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="conteiner">
+    <h1 class="text-center mt-4 mb-4 display-5">Lista de productos</h1>
+    <div class="table-responsive w-75 mx-auto">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Stock Actual</th>
+                <th scope="col">Stock Minimo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Fecha de creacion</th>
+                <th></th>
+              </tr>
+            </thead>
+            {% for producto in productos %}
+            <tbody>
+              <tr>
+                <th scope="row">{{ producto.id }}</th>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.descripcion }}</td>
+                <td>{{ producto.stock_actual }}</td>
+                <td>{{ producto.stock_minimo }}</td>
+                <td>{{ producto.categoria }}</td>
+                <td>{{ producto.f_creado }}</td>
+                <td>
+                    <a href="{% url 'eliminarproducto' producto.id %}" class="btn btn-danger btn-sm">
+                        Eliminar
+                    </a>
+                    <a href="" class="btn btn-primary btn-sm">
+                        Modificar
+                    </a>
+                </td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+    </div>
+</main>
+{% endblock %}
