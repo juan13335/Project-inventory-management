@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-from django_select2.forms import ModelSelect2Widget
+#from django_select2.forms import ModelSelect2Widget
 # Formularios
 
 class CrearProductoform(forms.ModelForm):
