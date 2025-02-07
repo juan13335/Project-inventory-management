@@ -64,11 +64,23 @@ def listar_producto(request):
     })
 
 def eliminar_producto(request, producto_id):
-    producto = get_object_or_404(Producto, pk=producto_id)
-    producto.delete()
-    return redirect('listarproducto')
+    if request.method == 'POST':
+        producto = get_object_or_404(Producto, pk=producto_id)
+        producto.delete()
+        return redirect('listarproducto')
 
+def eliminar_categoria(request, categoria_id):
+    if request.method == 'POST':
+        categoria = get_object_or_404(Categoria, pk=categoria_id)
+        categoria.delete()
+        return redirect('listarcategoria')
 
 def modificar_producto(request, producto_id):
     pass
         
+
+def listar_categoria(request):
+    categorias = Categoria.objects.all()
+    return render(request, 'listar_categoria.html', {
+        'categorias': categorias
+    })

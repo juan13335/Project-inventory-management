@@ -25,18 +25,17 @@
                 </a>
                 <ul class="dropdown-menu text-white-50" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="{% url 'crearcategoria' %}">Dar de alta</a></li>
-                  <li><a class="dropdown-item" href="#">Listar categorias</a></li>
+                  <li><a class="dropdown-item" href="{% url 'listarcategoria' %}">Listar categorias</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Producto
+                 Repuesto
                 </a>
                 <ul class="dropdown-menu text-white-50" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="{% url 'crearproducto' %}">Dar de alta</a></li>
-                  <li><a class="dropdown-item" href="{% url 'compra' %}">Registrar compra</a></li>
-                  <li><a class="dropdown-item" href="#">Registrar venta</a></li>
-                  <li><a class="dropdown-item" href="{% url 'listarproducto' %}">Listar productos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'crearproducto' %}">Registrar repuesto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'compra' %}">Compra de repuesto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'listarproducto' %}">Listar repuesto</a></li>
                 </ul>
               </li>
             </ul>
